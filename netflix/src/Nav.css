@@ -1,0 +1,50 @@
+.nav_content {
+display: flex;
+justify-content: space-between;
+
+align-items: center;
+
+}
+
+.nav_logo{
+
+position: fixed;
+padding-left: 50px;
+left : 0 ; 
+cursor: pointer;
+width: 120px;
+
+}
+
+.nav {
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+top: 0;
+z-index: 100;
+padding: 20px;
+height: 27px;
+width: 100%;
+transition-timing-function: ease-in;
+transition: all 0.5s;
+
+
+}
+
+
+.nav_black {
+
+background-color: #111;
+}
+
+.nav_avatar {
+position: fixed;
+cursor: pointer;
+right : 20px ; 
+width: 32px;
+border-radius: 3px;
+
+
+
+}
