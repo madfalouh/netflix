@@ -1,21 +1,74 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Banner.css'
 import netflixBanner from './assets/images/banner.png'
-
+import axios from './axios'
+import requests from './Request'
 function Banner() {
+
+const [movie , setMovie] = useState([])
+
+
+useEffect(()=>{
+
+async function fetchDate() {
+
+
+const request = await axios.get(requests.fetchNetflixOriginals)
+
+
+setMovie(
+request.data.results[
+Math.floor(Math.random() *request.data.results.length-1 )
+]
+)
+
+
+
+
+return request
+
+}
+
+fetchDate()
+
+} , [] )
+
+
+useEffect(() =>{
+async function fetchDate() {
+
+
+const request = await axios.get(requests.fetchImages)
+
+
+console.log(request.data);
+
+
+
+
+return request
+
+}
+
+fetchDate()
+
+} , [movie])
+
+
+console.log(movie);
+
   return (
-    
-<header  className='banner' >
+<header  className='banner' style={{backgroundImage  : `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`}} >
 <div className='banner_content' >
 
 <h1 className='banner_title' >
 
-Movie Name
+{movie?.name || movie?.original_name}
 
 </h1>
 
 
-<h1 className='banner_description' > Il frayait avec les grands, tout en s'attaquant aux vulnérables.<br></br> Derrière son sourire charmeur se cachait le cerveau sadique d'un<br></br> horrible tueur en série. </h1>
+<h1 className='banner_description' > {movie?.overview}</h1>
 
 <div className='banner_buttons' > 
 
@@ -34,9 +87,10 @@ More Info</button>
 
 
 </div>
-
 <div className='banner--fadeBottom' />
 </header>
+
+
 
   )
 }
