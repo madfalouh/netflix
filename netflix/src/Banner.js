@@ -6,7 +6,7 @@ import requests from './Request'
 function Banner() {
 
 const [movie , setMovie] = useState([])
-
+const [movieLogo , setMovieLogo] = useState([])
 
 useEffect(()=>{
 
@@ -37,35 +37,27 @@ fetchDate()
 useEffect(() =>{
 async function fetchDate() {
 
-
-const request = await axios.get(requests.fetchImages)
-
-
-console.log(request.data);
-
-
-
-
-return request
-
+if(movie?.id){
+const request = await axios.get(`/tv/${movie?.id}/images?api_key=3e30337ff84caa6ac17cb43117915508`)
+setMovieLogo(request.data.logos[0].file_path)
 }
-
+}
 fetchDate()
-
 } , [movie])
 
 
-console.log(movie);
-
   return (
+<div className='container' >
 <header  className='banner' style={{backgroundImage  : `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`}} >
 <div className='banner_content' >
 
-<h1 className='banner_title' >
 
-{movie?.name || movie?.original_name}
 
-</h1>
+<div className='banner_title' >
+
+<img src={'https://image.tmdb.org/t/p/original/'+movieLogo }  width={550} ></img>
+
+</div>
 
 
 <h1 className='banner_description' > {movie?.overview}</h1>
@@ -90,7 +82,7 @@ More Info</button>
 <div className='banner--fadeBottom' />
 </header>
 
-
+</div>
 
   )
 }
