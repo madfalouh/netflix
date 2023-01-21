@@ -105,8 +105,26 @@ opacity: 0.5;
 .row_posters::-webkit-scrollbar{
 
 display: none;
-
-
 }
 
 
+.row_poster{
+cursor: pointer;
+box-sizing: border-box;
+    display: inline-block;
+    padding: 0 0.2vw;
+    position: relative;
+    vertical-align: top;
+    white-space: normal;
+    z-index: 1;
+
+}
+
+.title_row {
+
+display: table-cell;
+    font-size: 1.4vw;
+    line-height: 1.25vw;
+    vertical-align: bottom;
+    font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+}
