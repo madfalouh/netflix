@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './Nav.css'
 
-import NetflixLogo from './assets/images/netflix-logo.png'
-import NetflixAvatarLogo from './assets/images/netflix-avatar.jpg'
+import NetflixLogo from '../../assets/images/netflix-logo.png'
+import NetflixAvatarLogo from '../../assets/images/netflix-avatar.jpg'
 
 
 function Nav() {

@@ -1,0 +1,131 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
+
+
+
+.LoginScreen {
+
+position: relative;
+
+height: 100%;
+
+background: url('../../assets/images/netflix-login.jpg');
+
+background-size: cover;
+
+}
+
+.netflix_logo{
+
+position: fixed;
+
+left: 0;
+width: 150px;
+
+object-fit: contain;
+
+padding-left: 20px;
+
+}
+.loginScreen_button {
+
+position: fixed;
+border-radius: 5px;
+right: 20px;
+border: none;
+cursor: pointer;
+top :20px ; 
+font-weight: 600;
+padding : 10px 20px ;
+background-color: #e50914;
+font-size: 1.5rem;
+color :white
+}
+
+.loginScreen_gradiant {
+
+width: 100%;
+
+z-index: 1;
+
+height: 100vh;
+
+
+background: rgba(0, 0, 0, 0.4);
+
+
+background-image: linear-gradient(
+to top , 
+
+rgba(0,0,0,0.8) 0 ,
+rgba(0,0,0,0) 50% ,
+rgba(0,0,0,0.8) 100% ,
+
+
+);
+
+
+}
+
+
+.loginScreen_body >h1{
+font-family: 'Roboto';
+
+font-size: 5.125rem;
+
+margin-bottom: 20px;
+}
+
+.loginScreen_body >h2{
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 200;
+font-size: 2.5rem;
+
+margin-bottom: 20px;
+}
+
+.loginScreen_body >h3{
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 200;
+font-size: 2rem;
+margin-bottom: 20px;
+}
+
+
+.loginScreen_body{
+position: absolute;
+top: 30%;
+z-index: 99999;
+padding: 20px;
+color: white;
+font-family: 'Roboto';
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+font-size: 5.125rem;
+margin-bottom: 20px;
+
+}
+
+.loginScreen_input >form > input {
+border-radius: 3px;
+padding: 10px;
+outline-width: 0;
+height: 40px;
+width: 30%;
+border: none;
+max-width: 800px;
+}
+
+.loginScreen_getStarted{
+padding: 10px;
+height: 60px;
+border-radius: 3px;
+font-size: 2rem;
+color: white;
+
+background-color: #e50914;
+
+border: none;
+
+}

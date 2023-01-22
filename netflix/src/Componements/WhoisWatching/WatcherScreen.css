@@ -1,0 +1,117 @@
+.banner--fadeBottom {
+width: 100%;
+height: 7.4rem;
+background-image:  linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
+}
+.watcher_container {
+display: flex;
+height: 100vh;
+align-items: center;
+
+justify-content: center;
+
+background-color: #141414;
+}
+
+ .watcher_container > .watcher_content > .img_container> .image_elemnts >  img {
+
+    background-color: #333;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    box-sizing: border-box;
+    height: 10vw;
+    max-height: 200px;
+    max-width: 200px;
+    min-height: 84px;
+    min-width: 84px;
+    position: relative;
+    text-decoration: none;
+    width: 10vw;
+
+}
+
+.watcher_content {
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.watcher_container > .watcher_content  > h1 {
+font-size: 2rem;
+    color: #fff;
+    font-size: 3.5vw;
+    font-weight: unset;
+    width: 100%;
+    margin-bottom: 60px;
+
+
+}
+
+.img_container {
+display: flex;
+
+gap : 40px
+
+
+}
+
+.manage_button {
+   background-color: transparent;
+    border: 1px solid grey;
+    color: grey;
+    cursor: pointer;
+    display: block;
+    font-size: 1.2vw;
+    letter-spacing: 2px;
+    margin: 4em 0 1em;
+    padding: .5em 1.5em;
+    max-width: 50%;
+}
+
+.image_elemnts {
+display: flex;
+flex-direction: column;
+cursor: pointer;
+}
+
+
+
+
+span{
+
+    color: grey;
+    display: block;
+    font-size: 1.3vw;
+    line-height: 1.2em;
+    margin: 0.6em 0;
+    min-height: 1.8em;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+
+
+
+.img_hover {
+border: 4px solid white;
+}
+.sapn_withe {
+color: #fff;
+}
+
+
+button:hover{
+			color:  white;
+			border: 1px solid white;
+
+}
+
+
+.image_elemnts:hover  > img {
+	border: 6px solid white;
+}
+.image_elemnts:hover > span {
+	color: white;
+}
