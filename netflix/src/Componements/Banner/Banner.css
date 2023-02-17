@@ -10,21 +10,33 @@ width: 100%;
 }
 
 
-.banner{
+.container {
+display: block ; 
 width: 100%;
-background-size: cover;
-display: flex;
-justify-content: flex-end;
+
+}
+
+
+.banner{
+
+height: 100vh;
+display: flex ; 
 flex-direction: column;
-background-position: center center;
+justify-content: space-between;
+object-fit: contain;
+background-size: cover;
+background-position: center ;
 }
 
 .banner_content {
 padding-top: 15%;
 display: flex;
 flex-direction: column;
+
+justify-content: space-between;
+
 gap: 20px;
-height: 50%;
+
 margin-left: 50px;
 }
 
@@ -53,6 +65,9 @@ height: 7.4rem;
 background-image: linear-gradient(180deg , transparent , rgba(37 ,37, 37 ,0.61)
 ,#111
 );
+
+
+
 }
 .banner_buttons{
 display: flex;
@@ -108,23 +123,3 @@ display: none;
 }
 
 
-.row_poster{
-cursor: pointer;
-box-sizing: border-box;
-    display: inline-block;
-    padding: 0 0.2vw;
-    position: relative;
-    vertical-align: top;
-    white-space: normal;
-    z-index: 1;
-
-}
-
-.title_row {
-
-display: table-cell;
-    font-size: 1.4vw;
-    line-height: 1.25vw;
-    vertical-align: bottom;
-    font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
-}

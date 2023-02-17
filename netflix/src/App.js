@@ -7,6 +7,7 @@ import { auth } from './firebase';
 import HomeScreen from './HomeScreen';
 import LoginScreen from './Componements/Login/LoginScreen';
 import WatcherScreen from './Componements/WhoisWatching/WatcherScreen';
+import ManageProfile from './Componements/WhoisWatching/ManageProfile/ManageProfile';
 
 
 
@@ -50,6 +51,10 @@ return unsubscribe ;
 <Route  path="/"  element={<HomeScreen />}></Route>
 
 <Route  path="/browse"  element={  <WatcherScreen/>  }></Route>
+
+
+<Route  path="/ManageProfiles"  element={  <ManageProfile /> }></Route>
+
 
 </Routes>)}
 

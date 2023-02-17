@@ -1,0 +1,409 @@
+
+
+.modify_effect {
+  position: relative;
+
+  width: 100%;
+  height: 7.4rem;
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 10%,
+    transparent
+  );
+}
+
+.watcher_container {
+  display: block;
+
+  height: 100vh;
+
+  background-color: #141414;
+}
+
+.svg-edit-overlay {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 10vw;
+  max-height: 250px;
+  min-height: 84px;
+  text-decoration: none;
+}
+
+.svg-edit-overlay > svg {
+  width: 2.5vw;
+}
+
+.image_elemnts {
+  position: relative;
+}
+
+.image_elemnts_opacity > img:not(.addProfile) {
+  opacity: 0.5;
+}
+
+.watcher_container > .watcher_content > .img_container > .image_elemnts > img {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 10vw;
+  max-height: 250px;
+  max-width: 250px;
+  min-height: 84px;
+  min-width: 84px;
+  position: relative;
+  text-decoration: none;
+  width: 10vw;
+}
+
+.watcher_content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.watcher_container > .watcher_content > h1 {
+  font-size: 2rem;
+  color: #fff;
+  font-size: 3.5vw;
+  font-weight: unset;
+  width: 100%;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.img_container {
+  display: flex;
+
+  gap: 2vw;
+}
+
+.confirm_button {
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  display: block;
+  font-size: 25px;
+  font-weight: 700;
+  margin: 3em 0 0em;
+  padding: 0.6em 1.3em;
+  background-color: #fff;
+  letter-spacing: 0cm;
+}
+
+.confirm_button:hover {
+  border: 1px solid #c00;
+
+  color: white;
+  background-color: #c00;
+}
+
+.image_elemnts {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+span {
+  color: grey;
+  display: block;
+  font-size: 1.3vw;
+  line-height: 1.2em;
+  margin: 0.6em 0;
+  min-height: 1.8em;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.img_hover {
+  border: 4px solid white;
+}
+.sapn_withe {
+  color: #fff;
+}
+
+button:hover {
+  color: white;
+  border: 1px solid white;
+}
+
+.image_elemnts:hover > img {
+  border: 6px solid white;
+}
+.image_elemnts:hover > span {
+  color: white;
+}
+
+.watcher_container
+  > .watcher_content
+  > .img_container
+  > .image_elemnts
+  > .addProfile:hover {
+  background-color: white;
+}
+
+@media (max-width: 600px) {
+  .img_container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+    gap: 3.5vw;
+
+    justify-content: center;
+  }
+}
+
+.modify_content {
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  justify-content: center;
+}
+
+.modify_content > h1 {
+  color: #fff;
+  font-size: 4vw;
+  font-weight: unset;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.grid_layout {
+  border-top: 1px solid grey;
+
+  border-bottom: 1px solid grey;
+  padding-top: 30px;
+  display: grid;
+  grid-template-columns: 10vw 25.2vw;
+
+}
+
+.first_section {
+  display: flex;
+
+  flex-direction: column;
+
+  width: 10vw;
+
+  align-items: flex-start;
+}
+
+.mcheck {
+margin-top: -1em;
+  position: relative;
+  display: flex;
+align-items: center;
+text-align: left;
+color: #fff;
+}
+
+.mcheck p {
+line-height: 1em;
+font-size: .9vw;
+
+}
+.mcheck input[type="checkbox"] {
+  display: none;
+}
+.mcheck input[type="checkbox"] + label {
+  float: left;
+  border-width: 0.2px;
+  height: 1.2em;
+  width: 1.5em;
+  margin-right: 0.5em;
+  position: relative;
+  cursor: pointer;
+}
+.mcheck input[type="checkbox"]:checked + label:after {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mcheck.iconBox input[type="checkbox"]:checked + label:after {
+  top: 0.2em;
+  bottom: 0.2em;
+  left: 0.2em;
+  right: 0.2em;
+  content: "";
+}
+
+.mcheck.iconCheck input[type="checkbox"]:checked + label:after {
+  content: "\2713";
+}
+
+.mcheck.iconCheckHeavy input[type="checkbox"]:checked + label:after {
+  content: "\2713";
+}
+
+.mcheck input[type="checkbox"] + label {
+  border-style: solid;
+  border-color: #ddd;
+  color: rgb(255, 255, 255);
+}
+
+.image_modify {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 8vw;
+  max-height: 250px;
+  max-width: 250px;
+  min-height: 84px;
+  min-width: 84px;
+  position: relative;
+  text-decoration: none;
+  width: 8vw;
+}
+
+.secound_section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+}
+
+.secound_section > h2 {
+  margin-top: 5%;
+  padding-bottom: 20px;
+  color: #ccc;
+  font-size: 1.3vw;
+  margin-bottom: 7px;
+
+  font-weight: 400;
+}
+
+.body_modify_elemnts > input {
+  background: #666;
+  border: 1px solid transparent;
+  border: 1px solid transparent;
+  color: #fff;
+  height: 1.6em;
+  width: 18em;
+  font-size: 1.3vw;
+  text-indent: 0.1vw;
+  padding: 0.2em 0.6em;
+  outline: none;
+}
+
+.body_modify_elemnts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  
+  width: 100%;
+  border-bottom: 1px solid grey;
+}
+
+.body_modify_elemnts > h2 {
+  color: #ccc;
+  font-size: 1.3vw;
+  margin-bottom: 7px;
+
+  font-weight: 400;
+}
+
+.body_modify_elemnts > p {
+  color: rgb(255, 255, 255);
+  font-size: 1.1vw;
+  margin-bottom: 7px;
+
+  font-weight: 400;
+}
+
+.label {
+  height: 40px;
+
+  width: 100%;
+}
+
+.select {
+  border: 1px solid white;
+  display: inline-block;
+
+  height: 2.5rem;
+  padding-left: 10px;
+  position: relative;
+  padding-right: 60px;
+}
+
+.arrow {
+  border-color: #fff transparent;
+  border-style: solid;
+  border-width: 5px 5px 0;
+  height: 0;
+  position: absolute;
+  right: 10px;
+  top: -20%;
+}
+
+.modify_input_bottom {
+  margin-bottom: 40px;
+}
+
+
+.matority_settings {
+  display: inline-block;
+  text-align: center;
+  background: #333;
+  border-radius: 2px;
+  margin-right: 5px;
+  padding: 9px 15px;
+}
+
+.matority_settings h3 {
+  font-size: 0.8vw;
+  font-weight: 500;
+}
+
+.body_modify_elemnts > input::placeholder {
+  opacity: 1;
+}
+
+.modify_button {
+  background-color: transparent;
+  border: 1px solid grey;
+  color: grey;
+  cursor: pointer;
+  display: block;
+  font-size: 1vw;
+  letter-spacing: 2px;
+  padding: 0.5em 1.5em;
+  max-width: 50%;
+  margin-bottom: 10%;
+}
+
+.buttons_modify {
+  margin-top: 5%;
+}
+
+
+.secound_section .autoPlay {
+margin-bottom: 5%;
+
+}

@@ -1,5 +1,4 @@
 
-
 .watcher--fadeBottom {
 position: absolute;
 top: 0;
@@ -36,11 +35,10 @@ background-color: #141414;
 }
 
 .watcher_content {
+
 text-align: center;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+
+
 }
 
 .watcher_container > .watcher_content  > h1 {
@@ -140,6 +138,14 @@ justify-content: center;
   }
 }
 
+
+.AddElement  {
+ 
+
+height: 100vh;
+
+}
+
 .watcher_container  > .AddElement  > h1 {
 
 font-size: 2rem;
@@ -171,7 +177,7 @@ gap:30px
 
 .add_element_form > img {
 
-
+filter: grayscale(50%);
 border-radius: 4px;
     height: 8vw;
     max-height: 180px;
@@ -203,8 +209,10 @@ outline: none;
 
 
 .form-group {
-  display: block;
+  display: flex;
+
 }
+
 
 .form-group input {
   padding: 0;
@@ -218,6 +226,8 @@ outline: none;
 .form-group label {
   position: relative;
   cursor: pointer;
+  text-align: left;
+margin-right: -50%;
 }
 
 .form-group label:before {
@@ -248,8 +258,7 @@ outline: none;
 }
 
 .form-group > label {
-
-font-size: 1.3vw;
+font-size: 1vw;
     font-weight: 400;
 }
 
@@ -296,19 +305,28 @@ color:rgb(111, 109, 109) ;
 border: 1px solid rgb(111, 109, 109);
 }
 
+.watcher_container{
 
+
+}
+
+.img_container {
+
+}
 
 .watcher_content{
+
 transform: perspective(500px) translateZ(30px);
-animation: textAppear 0.3s ease-in-out;
+
+animation: textAppear 0.4s ease-in-out;
 animation-iteration-count: 1; 
 
 animation-fill-mode: forwards;
-}
 
+
+}
 .AddElement{
 transform: perspective(500px) translateZ(30px);
-
 }
 
 .AddElement-move {

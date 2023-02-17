@@ -8,6 +8,7 @@ import plusIcon from "../../assets/images/icons8-plus-30.svg";
 
 import avatarLogo2 from "../../assets/images/netflix-avatar.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 
 function WatcherScreen() {
   const avatarLogo1 =
@@ -23,12 +24,19 @@ function WatcherScreen() {
     "https://occ-0-990-114.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABbV2URr-qEYOrESG0qnP2787XsIxWTMBh7QfJwyqYxMAVFNyiXAqFeu16gI8yTxg3kLwF2mUDKmZGfwBEDd7722xskhYwAMwsBBe.png?r=bd7";
   const [isAdd, SetIsAdd] = useState(true);
 
+  const [manageActive , setManageActive] =useState(true) ; 
+
+
+const navigate = useNavigate()
+
   return (
     <div className="watcher_container">
       <div className="watcher--fadeBottom"></div>
 
       {isAdd ? (
+      
         <div className="watcher_content">
+    
           <h1>Who is watching?</h1>
 
           <div className="img_container">
@@ -64,12 +72,16 @@ function WatcherScreen() {
             </div>
           </div>
 
-          <button className="manage_button">Manage Profiles</button>
-        </div>
+          <button className="manage_button"   onClick={()=>{navigate("/ManageProfiles")}}  >Manage Profiles</button>
+        
+</div>
+
       ) : (
-        <div   className={classNames("AddElement" , {
-                            'AddElement-move' : !isAdd
-                            })}     >
+        <div
+          className={classNames("AddElement", {
+            "AddElement-move": !isAdd,
+          })}
+        >
           <h1>Add a profile</h1>
 
           <h4>Add a profile for someone watching Netflix.</h4>
@@ -82,7 +94,7 @@ function WatcherScreen() {
 
               <div class="form-group">
                 <input type="checkbox" id="html" />
-                <label for="html">Enfant?</label>
+                <label for="html">Kid ?</label>
               </div>
             </div>
             <div className="add_buttons">
