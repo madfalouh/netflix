@@ -5,14 +5,21 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIos from "@mui/icons-material/ArrowBackIos";
 import LazyLoad from "react-lazyload";
+import classNames from "classnames";
 
 function Row(props) {
   const [movies, setMovies] = useState([]);
+  const movieRef = useRef();
+  const descriptionRef = useRef();
   const rowScroll = useRef();
   const [slider, setSlider] = useState(0);
   const base_url = "https://www.themoviedb.org/t/p/original/";
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const videRef =useRef()
+  let isHovered = true;
+  const indicatorRef = useRef()
+  const [isCollapsed, setisCollapsed] = useState(false);
+  const [timer, setTimer] = useState(null);
+
+  const videRef = useRef();
   useEffect(() => {
     async function fetchData() {
       const request = await axios({
@@ -30,43 +37,96 @@ function Row(props) {
   }, [props.fetchUrl]);
 
   const hudleClick = (directions) => {
-    if (directions === "right") {
-      rowScroll.current.scrollLeft = rowScroll.current.scrollLeft + 500;
-
-      console.log(rowScroll.current.scrollLeft);
-    } else {
-      rowScroll.current.scrollLeft = rowScroll.current.scrollLeft - 500;
+   
+    if (directions === "right" && slider!=3 ) {
+      
+    indicatorRef.current.childNodes[slider].classList.remove("active");
+    indicatorRef.current.childNodes[slider + 1].classList.add("active");
+    rowScroll.current.scrollLeft = (slider+1)*2000;
+     setSlider(slider+1)
+    } else if(directions === "left" && slider!=0 ) {
+      indicatorRef.current.childNodes[slider].classList.remove("active");
+    indicatorRef.current.childNodes[slider -1].classList.add("active");
+    rowScroll.current.scrollLeft = (slider+-1)*2000;
+     setSlider(slider-1)
     }
   };
 
+  const resetHoverTimer = () => {
+    if (timer) {
+      clearTimeout(timer);
+    }
+    setTimer(null);
+  };
 
 
   return (
-    <div class="container_">
-      <button type="button" id="moveLeft" class="btn-nav">
-        ᐊ
-      </button>
-      <div class="container-indicators">
-        <div class="indicator active"></div>
-        <div class="indicator"></div>
-        <div class="indicator"></div>
+    <div className="container_">
+      <div className="row-1-md">
+        <h2 className="row_title">{props.title}</h2>
+
+        <div className="indicator-container"  ref={indicatorRef} >
+          <div className="indicator active"></div>
+          <div className="indicator"></div>
+          <div className="indicator"></div>
+          <div className="indicator"></div>
+        </div>
+
       </div>
 
-      <div class="slider" id="mySlider">
-        <h2 className="row_title">{props.title}</h2>
+      <div className="slider" id="mySlider" ref={rowScroll}>
         {movies.map(
-          (movie) =>
+          (movie, index) =>
             movie.backdrop_path && (
-              <div className="movie" onMouseEnter={event => { setTimeout(() => { event.target.play() }, 2000) }  }  onMouseLeave={event => { setTimeout(() => {  event.target.load() }, 600) } } >
- 
-                <video   ref={videRef}  className="playVid"  loop muted  poster={`${base_url}${movie.backdrop_path}`}>
+              <div
+                className={classNames("movie")}
+                ref={movieRef}
+                onMouseEnter={(event) => {
+                  isHovered = true;
+                  setisCollapsed(true);
+
+                  setTimer(
+                    setTimeout(() => {
+                      console.log("hhjjhjh");
+
+                      console.log(isHovered);
+                      if (isHovered) {
+                        event.target.parentElement.classList.add("hovered");
+                        event.target.nextElementSibling.style.display = "flex";
+                        setTimeout(() => {
+                          event.target.play();
+                        }, 500);
+                      }
+                    }, 3500)
+                  );
+                }}
+                onMouseLeave={(event) => {
+                  resetHoverTimer();
+                  console.log("ffaall;");
+                  event.target.load();
+                  isHovered = false;
+                  setisCollapsed(false);
+                  event.target.parentElement.classList.remove("hovered");
+                  event.target.nextElementSibling.style.display = "none";
+                }}
+              >
+                <video
+                  ref={videRef}
+                  className="playVid"
+                  loop
+                  muted
+                  poster={`${base_url}${movie.backdrop_path}`}
+                >
                   <source
                     src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
                     type="video/mp4"
-                  >
-                  </source>
+                  ></source>
                 </video>
-                <div class="description_container">
+                <div
+                  class="description_container"
+                  ref={descriptionRef}
+                  id={"" + index}
+                >
                   <div className="info_container">
                     <div className="col-md-1">
                       <div className="col-first_section">
@@ -174,9 +234,22 @@ function Row(props) {
             )
         )}
       </div>
-      <button type="button" id="moveRight" class="btn-nav">
-        ᐅ
-      </button>
+      <div className="slide-btn">
+        <ArrowBackIosIcon
+          className="slide back"
+          style={{ width: "32px", height: "200px" }}
+          onClick={() => {
+            hudleClick("left");
+          }}
+        ></ArrowBackIosIcon>
+        <ArrowForwardIosIcon
+          className="slide front"
+          style={{ width: "32px", height: "200px" }}
+          onClick={() => {
+            hudleClick("right");
+          }}
+        ></ArrowForwardIosIcon>
+      </div>
     </div>
   );
 }
