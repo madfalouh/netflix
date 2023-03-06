@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@800&display=swap");
 
 ::-webkit-scrollbar {
@@ -21,6 +20,7 @@
   --arrow-width: 50px;
   --slider-py: 250px;
 }
+
 @media only screen and (max-width: 1000px) {
   :root {
     --movie-width: 25vw;
@@ -33,12 +33,11 @@ body {
 }
 
 .slider {
-overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 .container_ {
-  margin-top: -17%;
-  margin-bottom: 12%;
+  margin-top: -5%;
   position: relative;
 }
 
@@ -54,6 +53,8 @@ overflow-y: hidden;
 *
 *********************************/
 .slider {
+  counter-reset: slide-counter;
+
   scroll-behavior: smooth;
   width: 100%;
   overflow-x: scroll;
@@ -66,33 +67,33 @@ overflow-y: hidden;
 
 
 
- .slide {
+.slide {
   position: absolute;
- cursor: pointer;
+  cursor: pointer;
   top: 54%;
   background-color: rgba(0, 0, 0, 0.089);
-z-index: 1000;
+  z-index: 1000;
 }
 
 .front {
-right: 0;
+  right: 0;
 
 }
 
-.back{
-left: 0;
+.back {
+  left: 0;
 
 }
 
 
 .row_title {
-    color: #e9e3e3;
-    font-family: Arial;
-    padding-bottom: 20px;
-    padding-left: 50px;
-    font-size: 1.5vw;
-    line-height: 1.25vw;
-    vertical-align: bottom;
+  color: #e9e3e3;
+  font-family: Arial;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  font-size: 1.5vw;
+  line-height: 1.25vw;
+  vertical-align: bottom;
 
 }
 
@@ -102,18 +103,19 @@ left: 0;
 *
 *********************************/
 .indicator-container {
-padding-right: 15px;
+  padding-right: 15px;
 }
 
 
 
 .indicator {
-margin-right: 6px;
+  margin-right: 6px;
   width: 15px;
   height: 2px;
   background-color: grey;
   display: inline-block;
 }
+
 .indicator.active {
   background-color: white;
 }
@@ -124,42 +126,44 @@ margin-right: 6px;
 *
 *********************************/
 .movie {
+  counter-increment: slide-counter;
+
   width: var(--movie-width);
   height: var(--movie-height);
   display: inline-block;
   position: relative;
   color: white;
-  margin:0 5px;
+  margin: 0 5px;
   font-size: 0.8rem;
   transition: all 0.3s ease-in-out;
 
 }
 
 .row-1-md {
-position: absolute;
-top: 18vh;
+  position: absolute;
+  top: 18vh;
 }
 
 .row-1-md {
-width: 100%;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-between;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
 }
 
 .slide-btn {
 
-display: block;
+  display: block;
 }
 
 .movie:nth-of-type(1) {
   margin-left: var(--arrow-width);
 }
 
-.movie >.playVid {
-z-index: 999999999999999999999;
+.movie>.playVid {
+  z-index: 999999999999999999999;
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -167,12 +171,13 @@ z-index: 999999999999999999999;
 }
 
 .visible {
-display: flex;
+  display: flex;
 }
+
 .hovered {
-transition: all 0.3s ease-in-out;
-transform:  translateY(-210px) translateX(40px)  scale(1.2);
-z-index: 20000;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-210px) translateX(40px) scale(1.2);
+  z-index: 20000;
 }
 
 @media only screen and (min-width: 900px) {
@@ -222,6 +227,7 @@ z-index: 20000;
 }
 
 @media only screen and (min-width: 901px) {
+
   .container:hover .btn-nav,
   .container:hover .container-indicators {
     visibility: visible;
@@ -244,35 +250,35 @@ z-index: 20000;
 
 .col-md-1 {
 
-display: flex;
-flex-direction: row;
-justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .col-first_section {
-display: inline-block;
+  display: inline-block;
 
 }
 
 .col-first_section button {
-margin-right: 10px;
+  margin-right: 10px;
 }
 
 .info_container {
-padding: 15px ;
-background-color: #141414;
-width: 100%;
-height: 100%;
-flex-direction: column;
-gap: 5px;
-display: flex;
-margin: 0;
+  padding: 15px;
+  background-color: #141414;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  gap: 5px;
+  display: flex;
+  margin: 0;
 }
 
 
 
-.col-md-4  .classes-list {
-  
+.col-md-4 .classes-list {
+
   width: 160px;
   display: flex;
   flex-direction: row;
@@ -281,13 +287,13 @@ margin: 0;
   padding: 0;
 }
 
-.col-md-4 ul  li   {
-margin-left: 10px;
-margin-right: 5px;
+.col-md-4 ul li {
+  margin-left: 10px;
+  margin-right: 5px;
 
 }
 
-.col-md-4 ul  li  p  {
+.col-md-4 ul li p {
   font-size: 1.6em;
   font-weight: 700;
   color: #777;
@@ -303,10 +309,10 @@ margin-right: 5px;
 
 .col-first_section button {
 
-display: inline-flex;
-justify-content: center;
+  display: inline-flex;
+  justify-content: center;
 
-align-items: center;
+  align-items: center;
 
   max-width: 42px;
   min-width: 40px;
@@ -314,34 +320,34 @@ align-items: center;
   max-height: 42px;
   min-height: 40px;
 
-background-color: aliceblue;
+  background-color: aliceblue;
 
-border-radius: 50%;
+  border-radius: 50%;
 
 }
 
-.col-first_section  :nth-child(2) {
+.col-first_section :nth-child(2) {
 
-background-color: rgba(42, 42, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-width: 2px;
-    color: var(--white);
+  background-color: rgba(42, 42, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-width: 2px;
+  color: var(--white);
 }
 
-.col-first_section  :nth-child(3) {
+.col-first_section :nth-child(3) {
 
-background-color: rgba(42, 42, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-width: 2px;
-    color: var(--white);
+  background-color: rgba(42, 42, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-width: 2px;
+  color: var(--white);
 }
 
 
 .col-second_section button {
-display: inline-flex;
-justify-content: center;
+  display: inline-flex;
+  justify-content: center;
 
-align-items: center;
+  align-items: center;
 
   max-width: 42px;
   min-width: 40px;
@@ -349,14 +355,14 @@ align-items: center;
   max-height: 42px;
   min-height: 40px;
 
-background-color: aliceblue;
+  background-color: aliceblue;
 
-border-radius: 50%;
+  border-radius: 50%;
 
-background-color: rgba(42, 42, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-width: 2px;
-    color: var(--white);
+  background-color: rgba(42, 42, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-width: 2px;
+  color: var(--white);
 }
 
 
@@ -366,58 +372,111 @@ background-color: rgba(42, 42, 42, 0.6);
   width: 18px;
 
 
-height: 20px;
+  height: 20px;
 
-color: #e9e3e3;
+  color: #e9e3e3;
 
 }
 
 .col-md-2 .corespond {
-margin: 0;
-text-align: left;
-    color: #46d369;
-    font-size: 1.6rem;
-    font-weight: 700;
+  margin: 0;
+  text-align: left;
+  color: #46d369;
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
 .col-md-3 button {
 
 
 
-margin-right: 10px;
+  margin-right: 10px;
 
 
 }
 
-.col-md-3  :nth-child(1) {
+.col-md-3 :nth-child(1) {
 
-background-color :#e02e2e ; 
-padding: 5px;
-margin-right: 15px;
-border-radius: 5px;
-    color: #ffffff;
-    font-size: 1.6rem;
-    font-weight: 700;
-
-}
-
-.col-md-3  :nth-child(2) {
-
-background-color: rgba(42, 42, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-width: 2px;
-    color: var(--white);
-    color: #ffffff;
-    font-size: 1.6rem;
-    font-weight: 700;
+  background-color: #e02e2e;
+  padding: 5px;
+  margin-right: 15px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
 
 }
 
-.col-md-3  :nth-child(3) {
-font-size: 1.6rem;
-font-weight: 700;
-color: #e9e3e3;
-border-color: transparent;
-background-color: transparent;
+.col-md-3 :nth-child(2) {
 
+  background-color: rgba(42, 42, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-width: 2px;
+  color: var(--white);
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+
+}
+
+.col-md-3 :nth-child(3) {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #e9e3e3;
+  border-color: transparent;
+  background-color: transparent;
+
+}
+
+.indicator-container {
+  display: none;
+}
+
+.container_:hover .indicator-container {
+  display: flex;
+}
+
+.slide-btn {
+  display: none;
+}
+
+.container_:hover .slide-btn {
+  display: block;
+}
+
+.Action {
+  object-fit: cover;
+  width: 10vw;
+  height: 400px;
+}
+
+.Action  video  {
+  object-fit: cover;
+
+}
+
+.Top .playVid {
+  width: 50%;
+  margin-right: 50%;
+}
+
+
+
+.slider .Top::before {
+  content: counter(slide-counter);
+  margin-right: 1%;
+  line-height: 147px;
+  color: #000;
+  font-size: 270px;
+  font-weight: 900;
+  -webkit-text-stroke: 5px #595959;
+}
+
+
+
+.collapsed {
+  z-index: 99999999999999999999999999999999999999999;
+  position: absolute;
+  top: 0;
+  left: 50%;
 }

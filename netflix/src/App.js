@@ -8,6 +8,7 @@ import HomeScreen from './HomeScreen';
 import LoginScreen from './Componements/Login/LoginScreen';
 import WatcherScreen from './Componements/WhoisWatching/WatcherScreen';
 import ManageProfile from './Componements/WhoisWatching/ManageProfile/ManageProfile';
+import Welcome from './pages/welcomePage/Welcome';
 
 
 
@@ -46,14 +47,19 @@ return unsubscribe ;
 
 
 
-
 {!user ? (<LoginScreen></LoginScreen>) : (<Routes>
+
 <Route  path="/"  element={<HomeScreen />}></Route>
 
 <Route  path="/browse"  element={  <WatcherScreen/>  }></Route>
 
 
 <Route  path="/ManageProfiles"  element={  <ManageProfile /> }></Route>
+
+<Route   path="/welcome"  element={<Welcome></Welcome>}     ></Route>
+
+<Route   path="/login"  element={<LoginScreen></LoginScreen>}     ></Route>
+
 
 
 </Routes>)}

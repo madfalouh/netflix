@@ -1,6 +1,6 @@
 .SignupScreen {
 
-max-width: 500px;
+width: 380px;
 padding: 70px;
 display: flex;
 align-items: center;
@@ -9,24 +9,11 @@ background-color: rgba(0, 0, 0, 0.85);
 
 }
 
-.input_form_signIn  {
-display: grid;
-
-flex-direction: column;
-align-items: center;
-justify-content: center;
+form{
+width: 100%;
 }
 
-.SignupScreen > form > input {
-outline-width: 0;
-height: 40px;
-margin-bottom: 14px;
-border-radius: 5px;
-border: none;
-padding: 5px 30px;
-width: 300px;
 
-}
 
 .input_form_signIn >h1 {
 text-align: left;
@@ -40,35 +27,47 @@ justify-content: center;
 align-items: center;
 outline-width: 0;
 height: 40px;
+width: 100%;
 margin-bottom: 14px;
 border-radius: 5px;
 border: none;
 outline-width: 0;
-height: 40px;
-margin-bottom: 14px;
 border-radius: 5px;
 border: none;
-padding: 26px 16px;
+padding: 26px;
 color: white;
 background-color: #e50914;
 font-weight: 400;
 font-size: 1.8rem;
 cursor: pointer;
-margin-top: 35px;
+margin-top: 50px;
 font-weight: 700;
 
 }
 
-.SignupScreen >form > h4 {
-margin-top: 30px;
+.New_to {
+
+font-weight: 100;
+width: 100%;
 text-align: left;
-font-size: 1.3rem;
+height: 30px;
 }
 
 .signupScreen_gray {
+display: inline-block;
+font-weight: 100;
+font-size: 15px;
+text-align: left;
+color: #8c8c8c;
 
-color: gray;
-padding-right: 10px;
+}
+.signupScreen_link{
+display: inline-block;
+color: #fff;
+padding-left: 10px;
+font-weight: 100;
+font-size: 15px;
+text-align: left;
 }
 
 .signupScreen_link {
@@ -82,10 +81,109 @@ text-decoration : underline ;
 }
 
 .SignupScreen >form > h5 {
-color: gray;
+color: #8c8c8c;
 margin-top: 20px;
 text-align: left;
 font-size: 1.3rem;
 line-height: normal;
-margin-bottom: 150px;
+margin-bottom: 80px;
+}
+
+.inputBox {
+    position: relative;
+    padding-top: 15px;
+}
+
+.inputBox input {
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    border:none;
+    
+    outline: none;
+    background:#333;
+    color: #fff;
+    padding: 18px 22px 0;
+
+box-sizing: border-box;
+    line-height: 40px;
+}
+.inputBox label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    pointer-events: none;
+    transition: .2s;
+    color:#95a5a6;
+    font-family: 'PT Sans', sans-serif;
+
+}
+
+ #checkbox:checked  {
+  background-color: rgb(255, 255, 255);
+}
+
+.chack-box-rem{
+
+background: #737373 ;
+margin-top: -10px;
+width:19px;
+height: 19px;
+border-radius: 2px;
+}
+
+.checkBox-rember {
+
+display: flex;
+flex-direction: row;
+gap: 4px;
+justify-content: center;
+align-items: center;
+
+
+}
+
+.inputBox input + label {
+    top: 36px;
+    left: 22px;
+    font-size: 19px;
+}
+
+.inputBox input:focus + label {
+    top: 25px;
+    left: 22px;
+    font-size: 12px;
+}
+
+.inputBox input:focus {
+background-color: #4d4d4d;
+border-bottom: 4px solid #e50914;
+}
+
+.rember_me_section{
+width: 100%;
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+flex-direction: row;
+
+margin-bottom: 80px;
+}
+
+.visible {
+display: none;}
+
+
+
+.error{
+font-size: 13px;
+width: 80%;
+font-weight: 400;
+color: #e87c03;
+text-align: left;
+
 }

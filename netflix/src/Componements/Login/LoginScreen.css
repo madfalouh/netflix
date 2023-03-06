@@ -7,6 +7,7 @@
 
 position: relative;
 
+
 height: 100%;
 
 background: url('../../assets/images/netflix-login.jpg');
@@ -61,7 +62,6 @@ rgba(0,0,0,0.8) 0 ,
 rgba(0,0,0,0) 50% ,
 rgba(0,0,0,0.8) 100% ,
 
-
 );
 
 
@@ -94,7 +94,10 @@ margin-bottom: 20px;
 
 .loginScreen_body{
 position: absolute;
-top: 30%;
+
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 z-index: 99999;
 padding: 20px;
 color: white;
@@ -108,19 +111,24 @@ margin-bottom: 20px;
 }
 
 .loginScreen_input >form > input {
-border-radius: 3px;
-padding: 10px;
+  display: inline-block;
+
+border-radius: 3px 0px 0px 3px;
+padding: 15px;
 outline-width: 0;
 height: 40px;
-width: 30%;
+width: 60%;
 border: none;
 max-width: 800px;
+font-size: 1.7rem;
+
 }
 
 .loginScreen_getStarted{
-padding: 10px;
-height: 60px;
-border-radius: 3px;
+
+padding: 15px;
+height: 72px;
+border-radius: 0px 3px 3px 0px;
 font-size: 2rem;
 color: white;
 

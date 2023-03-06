@@ -1,0 +1,369 @@
+
+body {
+overflow-x: hidden;
+} 
+
+.header_section {
+    position: relative;
+    height: 75vh;
+    width: 100%;
+    display: block;
+
+
+
+
+    background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/83e8c151-107d-4e8f-b95a-d2ba99d49bb9/7a0bd648-8238-4134-b486-e7ff5cbaa56e/US-en-20230213-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+    background-size: 100%;
+}
+
+.header_section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-image: linear-gradient(0deg,rgba(0,0,0,.8) 0,transparent 60%,rgba(0,0,0,.8));
+  z-index: 1;
+}
+
+
+ .concord-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+ .netflix-logo-welcome {
+object-fit: contain;
+width: 250px;
+}
+
+.header_section-first {
+position: relative;
+z-index: 200;
+width: 100%;
+display: flex;
+align-items: center;
+
+justify-content: space-between;
+}
+
+.disconnect {
+margin-right: 2%;
+border-radius: 3px;
+color: aliceblue;
+font-size: 2rem;
+font-weight: 400;
+background-color: #e50914;
+padding: 8px 37px;
+border: none;
+}
+
+.header_section-first >  .netflix-logo-welcome {
+
+margin-left: 2%;
+ }
+
+.body-header {
+position: relative;
+z-index: 10000;
+width:100% ;
+display: flex;
+margin-left: -4%;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 100px;
+}
+
+.welcome-msg  {
+font-size: 2.625rem;
+font-weight: 400;
+}
+.ad-netflix {
+width: 100%;
+text-align: center;
+font-size: 7.625rem;
+    font-weight: 500;
+z-index: 10000;
+margin-bottom: 1%;
+}
+.reactivate {
+margin-top: 1%;
+padding: 15px 40px;
+font-size: 3.5em;
+}
+
+.text_elemts {
+display: flex;
+width: 42%;
+padding: 60px 0 0px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 30px;
+}
+
+.text_elemts h3 {
+line-height: 0px;
+}
+
+.tv_section {
+
+    border-top: 8px solid #222;
+    color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+padding-bottom: 3%;
+
+}
+
+.kiddo {
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: row-reverse;
+
+}
+
+.tv-wrapper {
+text-align: left;
+width: 60%;
+display: flex;
+align-items: center;
+}
+
+.tv-main-msg {
+
+font-weight: 500;
+font-size: 5em;
+
+width: 70%;
+padding-bottom: 20px;
+line-height: 60px;
+}
+
+.tv-side-msg {
+width: 90%;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.tv_section {
+
+background-color: black;
+}
+
+.our-story-card-img {
+position: relative;
+z-index: 1000;
+}
+
+.our-story-card-video {
+position: absolute;
+
+top: 20%;
+
+left: 12%;
+right: 0;
+}
+
+.kid {
+width: 60%;
+height: 100%;
+top: -16%;
+left: 20%;
+}
+
+
+
+.tv-vid {
+
+position: relative;
+
+
+width: fit-content;
+
+
+height: fit-content;
+}
+
+.kiddo :nth-child(-n+2) {
+
+margin-right: 6%;
+}
+
+.kiddo h2{
+
+width: 100%;
+}
+
+.kiddo h3{
+
+width: 100%;
+}
+
+.kk {
+margin-left: -8%;
+}
+
+
+.kk {
+position: relative;
+
+}
+
+.downald-phone {
+height: 95px;
+border-radius: 10px;
+border: 2.5px solid hsla(0,0%,100%,.25);
+width: 55%;
+background-color: #000;
+left: 22%;
+z-index: 100;
+position: absolute;
+margin-top: -25%;
+display: flex;
+flex-direction: row;
+justify-items: center;
+align-items: center;
+justify-content: space-between;
+}
+.phone {
+z-index: 1;
+}
+
+.downald-phone  img {
+height: 90%;
+padding-left: 15px;
+}
+.text-wrapper {
+
+display: flex;
+height: 100%;
+flex-direction: column;
+align-items: center;
+
+justify-content: center;
+}
+
+.text-wrapper p {
+
+line-height: 10px;
+width: 100%;
+font-size: 2em;
+font-weight: 500;
+padding-bottom: 8px;
+}
+.our-story-card-animation-custom {
+    background: url(https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif) 50% no-repeat;
+    background-size: 100%;
+    content: "";
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 6em;
+    width: 6em;
+    margin-right: 15px;
+}
+
+
+ .text-wrapper .encours {
+width: 100%;
+
+font-size: 1.5em;
+font-weight: 500;
+color: #0071eb
+}
+
+.question-wrapper {
+margin: 5px 0;
+display: flex;
+width: 100%;
+
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+
+
+.question-wrapper h2 {
+padding: 70px 0 70px;
+width: fit-content;
+}
+.question  {
+display: flex;
+align-items: center;
+text-align: left;
+justify-content: space-between;
+width: 45%;
+background-color: #303030;;
+height: 90px;
+}
+
+.question-collapsed  {
+padding: 50px;
+width: 100%;
+}
+
+.open-question .question-collapsed h3 {
+
+height: 400px;
+
+
+}
+
+.question-wrapper-big {
+height: 0px;
+overflow: hidden;
+width: 45%;
+display: flex;
+align-items: center;
+text-align: left;
+background-color: #303030;;
+}
+
+
+.question-show {
+height: 0px;
+transition: height 0.25s ease;
+
+}
+
+.question-collapsed h3  {
+font-size: 3em;
+font-weight: 400;
+width: 100%;
+}
+
+.question-wrapper .question h3 {
+
+
+font-weight: 500;
+font-size: 3em;
+margin: 0px 50px;
+}
+
+.question-section {
+
+display: flex;
+flex-direction: column;
+
+}
+
+
+.collapsed {
+
+
+
+position: relative;
+height: fit-content;
+
+}

@@ -12,12 +12,15 @@ function Row(props) {
   const movieRef = useRef();
   const descriptionRef = useRef();
   const rowScroll = useRef();
+  const arrowFront = useRef();
+  const arrowBack = useRef();
   const [slider, setSlider] = useState(0);
   const base_url = "https://www.themoviedb.org/t/p/original/";
   let isHovered = true;
-  const indicatorRef = useRef()
+  const indicatorRef = useRef();
   const [isCollapsed, setisCollapsed] = useState(false);
   const [timer, setTimer] = useState(null);
+  const test = useRef(true);
 
   const videRef = useRef();
   useEffect(() => {
@@ -36,19 +39,32 @@ function Row(props) {
     if (props.fetchUrl) fetchData();
   }, [props.fetchUrl]);
 
+  useEffect(() => {
+    if (slider === 0) {
+      arrowBack.current.style.display = "none";
+    }
+    if (slider === 3) {
+      arrowFront.current.style.display = "none";
+    }
+    if (slider != 0 && slider != 3) {
+      arrowFront.current.style.display = "block";
+      arrowBack.current.style.display = "block";
+    }
+  }, [slider]);
+
+  const handleScroll = () => {};
+
   const hudleClick = (directions) => {
-   
-    if (directions === "right" && slider!=3 ) {
-      
-    indicatorRef.current.childNodes[slider].classList.remove("active");
-    indicatorRef.current.childNodes[slider + 1].classList.add("active");
-    rowScroll.current.scrollLeft = (slider+1)*2000;
-     setSlider(slider+1)
-    } else if(directions === "left" && slider!=0 ) {
+    if (directions === "right" && slider != 3) {
       indicatorRef.current.childNodes[slider].classList.remove("active");
-    indicatorRef.current.childNodes[slider -1].classList.add("active");
-    rowScroll.current.scrollLeft = (slider+-1)*2000;
-     setSlider(slider-1)
+      indicatorRef.current.childNodes[slider + 1].classList.add("active");
+      rowScroll.current.scrollLeft = (slider + 1) * 2000;
+      setSlider(slider + 1);
+    } else if (directions === "left" && slider != 0) {
+      indicatorRef.current.childNodes[slider].classList.remove("active");
+      indicatorRef.current.childNodes[slider - 1].classList.add("active");
+      rowScroll.current.scrollLeft = (slider + -1) * 2000;
+      setSlider(slider - 1);
     }
   };
 
@@ -59,55 +75,67 @@ function Row(props) {
     setTimer(null);
   };
 
-
   return (
     <div className="container_">
       <div className="row-1-md">
         <h2 className="row_title">{props.title}</h2>
 
-        <div className="indicator-container"  ref={indicatorRef} >
+        <div className="indicator-container" ref={indicatorRef}>
           <div className="indicator active"></div>
           <div className="indicator"></div>
           <div className="indicator"></div>
           <div className="indicator"></div>
         </div>
-
       </div>
 
-      <div className="slider" id="mySlider" ref={rowScroll}>
+      <div
+        className="slider"
+        id="mySlider"
+        ref={rowScroll}
+        onScroll={handleScroll}
+      >
         {movies.map(
           (movie, index) =>
             movie.backdrop_path && (
               <div
-                className={classNames("movie")}
+                className={classNames("movie", props.title)}
                 ref={movieRef}
                 onMouseEnter={(event) => {
                   isHovered = true;
-                  setisCollapsed(true);
 
                   setTimer(
                     setTimeout(() => {
                       console.log("hhjjhjh");
 
                       console.log(isHovered);
-                      if (isHovered) {
-                        event.target.parentElement.classList.add("hovered");
-                        event.target.nextElementSibling.style.display = "flex";
-                        setTimeout(() => {
-                          event.target.play();
-                        }, 500);
+                      if (
+                        isHovered &&
+                        !event.target.parentElement.classList.contains("Action")
+                      ) {
+                        if (event.target.parentElement.className != "slider") {
+                          event.target.parentElement.classList.add("hovered");
+                          event.target.nextElementSibling.style.display =
+                            "flex";
+                          setTimeout(() => {
+                            event.target.play();
+                          }, 500);
+                        }
                       }
-                    }, 3500)
+                    }, 1000)
                   );
                 }}
                 onMouseLeave={(event) => {
-                  resetHoverTimer();
-                  console.log("ffaall;");
-                  event.target.load();
-                  isHovered = false;
-                  setisCollapsed(false);
-                  event.target.parentElement.classList.remove("hovered");
-                  event.target.nextElementSibling.style.display = "none";
+                  if (
+                    !event.target.parentElement.classList.contains("Action")
+                  ) {
+                    resetHoverTimer();
+                    console.log("ffaall;");
+                    event.target.load();
+                    isHovered = false;
+
+                    event.target.parentElement.classList.remove("hovered");
+                    event.target.nextElementSibling.style.display = "none";
+                  }
                 }}
               >
                 <video
@@ -181,7 +209,16 @@ function Row(props) {
                       </div>
 
                       <div className="col-second_section">
-                        <button>
+                        <button
+                          onClick={(event) => {
+                            const el =
+                              event.target.parentElement.parentElement
+                                .parentElement.parentElement.parentElement
+                                .parentElement;
+
+                            //           el.classList.add("collapsed")
+                          }}
+                        >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="#ffffff"
@@ -236,6 +273,7 @@ function Row(props) {
       </div>
       <div className="slide-btn">
         <ArrowBackIosIcon
+          ref={arrowBack}
           className="slide back"
           style={{ width: "32px", height: "200px" }}
           onClick={() => {
@@ -243,6 +281,7 @@ function Row(props) {
           }}
         ></ArrowBackIosIcon>
         <ArrowForwardIosIcon
+          ref={arrowFront}
           className="slide front"
           style={{ width: "32px", height: "200px" }}
           onClick={() => {

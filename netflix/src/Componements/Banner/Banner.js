@@ -9,8 +9,8 @@ function Banner() {
   const [truncatedText, setTruncatedText] = useState("");
 
   useEffect(() => {
-  console.log(movie);
-    if (movie.length !=0 && movie.overview.length > 150) {
+    console.log(movie);
+    if (movie.length != 0 && movie.overview.length > 150) {
       setTruncatedText(movie.overview.substring(0, 150) + "...");
     } else if (movie.overview != undefined && movie.overview.length <= 150) {
       setTruncatedText(movie?.overview);
