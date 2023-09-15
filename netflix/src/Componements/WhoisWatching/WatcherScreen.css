@@ -10,7 +10,7 @@ background-image:  linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
 display: flex;
 height: 100vh;
 align-items: center;
-
+position: relative;
 justify-content: center;
 
 background-color: #141414;
@@ -140,9 +140,14 @@ justify-content: center;
 
 
 .AddElement  {
- 
-
-height: 100vh;
+ display: flex;
+flex-direction: column;
+position: absolute;
+  top: 17%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+justify-content: center;
+height: fit-content;
 
 }
 

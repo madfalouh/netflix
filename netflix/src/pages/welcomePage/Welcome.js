@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import "./Welcome.css";
 
 import netflixLogo from "../../assets/images/netflix-logo.png";
+import { useNavigate } from "react-router-dom";
 
 function Welcome() {
   useEffect(() => {
@@ -11,7 +12,7 @@ function Welcome() {
       vid1.current.play();
     }
   }, []);
-
+  const navigate = useNavigate()
   const vid = useRef(null);
   const vid1 = useRef(null);
 
@@ -422,6 +423,7 @@ else {
         <button
           className="disconnect  reactivate  "
           style={{ marginTop: "80px" }}
+          onClick={()=>{navigate("/login")}}
         >
           Reactiver Votre abonement{" "}
         </button>

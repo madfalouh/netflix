@@ -29,7 +29,7 @@ const [signIn , setSignIn] = useState(false)
 <form className='form_input'>
 
 <input type={'email'} placeholder={'Email Address'} ></input>
-<button className='loginScreen_getStarted' onClick={()=> {setSignIn(true)}} >
+<button className='loginScreen_getStarted' onClick={()=> {setSignIn(true)  }} >
 GET STARTED 
 </button>
 

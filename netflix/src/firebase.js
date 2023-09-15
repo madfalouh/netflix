@@ -4,7 +4,7 @@ import 'firebase/compat/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBYmPLLIEw4T_mxHmQSTtM38oB8kBzyDIQ",
-  authDomain: "netflix-296aa.firebaseapp.com",
+  authDomain: "netflix-296aa.firebaseapp.com/welcome",
   projectId: "netflix-296aa",
   storageBucket: "netflix-296aa.appspot.com",
   messagingSenderId: "141118517349",

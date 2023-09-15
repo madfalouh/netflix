@@ -26,7 +26,6 @@ function WatcherScreen() {
 
   const [manageActive , setManageActive] =useState(true) ; 
 
-
 const navigate = useNavigate()
 
   return (
@@ -41,22 +40,22 @@ const navigate = useNavigate()
 
           <div className="img_container">
             <div className="image_elemnts">
-              <img src={avatarLogo1}></img>
+              <img src={avatarLogo1}  onClick={() =>{navigate("/home")} } ></img>
               <span>Mad</span>
             </div>
 
             <div className="image_elemnts">
-              <img src={avatarLogo2}></img>
+              <img src={avatarLogo2}  onClick={() =>{navigate("/home")} }></img>
               <span>Ashly</span>
             </div>
 
             <div className="image_elemnts">
-              <img src={avatarLogo3}></img>
+              <img src={avatarLogo3}  onClick={() =>{navigate("/home")} }></img>
               <span>Betty</span>
             </div>
 
             <div className="image_elemnts">
-              <img src={avatarLogo4}></img>
+              <img src={avatarLogo4}  onClick={() =>{navigate("/home")} }></img>
               <span>Doua</span>
             </div>
 
@@ -72,7 +71,7 @@ const navigate = useNavigate()
             </div>
           </div>
 
-          <button className="manage_button"   onClick={()=>{navigate("/ManageProfiles")}}  >Manage Profiles</button>
+          <button className="manage_button"    onClick={()=>{navigate("/ManageProfiles")}}  >Manage Profiles</button>
         
 </div>
 

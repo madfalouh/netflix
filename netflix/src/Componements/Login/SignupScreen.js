@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import "./SignupScreen.css";
 
@@ -129,6 +130,8 @@ console.log(email);
       });
   };
 
+const navigate = useNavigate()
+
   return (
     <div className="SignupScreen">
       <form className="input_form_signIn">
@@ -144,7 +147,7 @@ console.log(email);
           <label ref={label2}>Enter Password</label>
         </div>
         <span className={ classNames(  "error" , {"visible" :!errorVisiblePassword }  ) }  >Your password must contain between 4 and 60 characters.</span>
-        <button type="submit" onClick={signIn}>
+        <button type="submit" onClick={()=>{navigate("/browse")}}>
           {" "}
           Sign In
         </button>

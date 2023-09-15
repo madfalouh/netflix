@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { BrowserRouter as Router, Route , Routes, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route , Routes, Switch , Navigate } from 'react-router-dom';
 import './App.css';
 import { login, logout, selectUser } from './features/userSlice';
+import { Redirect } from 'react-router-dom';
+
+
 import { auth } from './firebase';
 import HomeScreen from './HomeScreen';
 import LoginScreen from './Componements/Login/LoginScreen';
@@ -42,27 +45,31 @@ return unsubscribe ;
   return (
     <div className="app">
     
-<Router>
+<Router >
 
 
 
 
-{!user ? (<LoginScreen></LoginScreen>) : (<Routes>
+<Routes>
 
-<Route  path="/"  element={<HomeScreen />}></Route>
+<Route path='/' element={<Navigate to='/welcome' />} />
+
+<Route   path="/welcome"  element={<Welcome></Welcome>}     ></Route>
+
+<Route  path="/Home"  element={<HomeScreen />}></Route>
 
 <Route  path="/browse"  element={  <WatcherScreen/>  }></Route>
 
 
 <Route  path="/ManageProfiles"  element={  <ManageProfile /> }></Route>
 
-<Route   path="/welcome"  element={<Welcome></Welcome>}     ></Route>
+
 
 <Route   path="/login"  element={<LoginScreen></LoginScreen>}     ></Route>
 
 
 
-</Routes>)}
+</Routes>
 
 
 
